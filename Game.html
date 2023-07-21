@@ -1,0 +1,51 @@
+<!DOCTYPE html
+	<head>
+		<title>Lucky Game</title>
+		<link rel="Stylesheet" href="GameStyling.css">
+		<script>
+			function numberGenerator(form)
+			{
+				var a =form.lnumber.value;
+				var ragx = /[0-99]/;				
+				if(ragx.test(a))
+					{
+						form.Randomnumber.value =Math.floor( Math.random()*100);
+						b=form.Randomnumber.value;
+						if(a==b)
+						{
+							document.getElementById("result").innerHTML="YOU WON";
+						}
+						else
+						{
+							document.getElementById("result").innerHTML="BETTER LUCK NEXT TIME";
+						}
+					}
+				else{
+					document.getElementById("result").innerHTML="Enter Lucky number Between 0-99";
+				}
+				
+			}
+		
+		
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			
+				<div class="header">
+					<h1><i>Random Gussesing Game</i></h1>
+				</div>	
+				<div class="main">
+				<form>
+			  <input type="text" name="lnumber" placeholder="Enter Your Lucky Number" pattern="[0-99]"><br>
+			   <input type="text" name="Randomnumber" placeholder="Random Number"><br>
+			  <input type ="button" value ="Generate Random Number" onclick="numberGenerator(this.form);">
+			  </form>
+			  <p id="result"></p>
+			</div>
+			
+		</div>	
+		 
+	
+	</body>
+</html>
